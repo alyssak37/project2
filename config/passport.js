@@ -1,18 +1,17 @@
 const passport = require('passport');
-const shopper = require('../models/shopper');
 const Shopper = require('../models/shopper');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
+console.log(process.env)
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_SECRET,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK
 }, function(accessToken, refreshToken, profile, cb){
 
     Shopper.findOne({ googleId: profile.id }, function(err, shopper) {
         if(err) return cb(err);
         if(shopper) {
-            return cb(null, user)
+            return cb(null, shopper)
         } else {
             const newShopper = new Shopper({
                 name: profile.displayName, 
@@ -32,7 +31,7 @@ passport.serializeUser(function(shopper, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-    shopper.findById(id, function(err, shopper) {
-        done(err, shopper)
+    Shopper.findById(id, function(err, shopper) {
+        done(err, shopper);
     });
 });

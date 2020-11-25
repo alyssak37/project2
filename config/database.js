@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.DATABASE_URL ||  'mongodb://localhost/clothing-project', {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
