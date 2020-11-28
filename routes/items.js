@@ -3,9 +3,9 @@ const router = express.Router();
 const itemsCtrl = require('../controllers/items');
 
 
-router.get('/items/new', itemsCtrl.new);
-router.post('/items', itemsCtrl.create);
-router.post('/shopper/:id/items', itemsCtrl.addItem);
+router.get('/shoppers/:id/items/new', itemsCtrl.new);
+router.post('/shoppers/:id/items', itemsCtrl.create);
+
 
 
 module.exports = router;

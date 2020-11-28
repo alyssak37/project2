@@ -6,7 +6,7 @@ router.get('/shoppers', shoppersCtrl.index);
 router.get('/new', shoppersCtrl.new);
 router.post('/', shoppersCtrl.create);
 router.get('/:id', shoppersCtrl.show);
-router.post('/items', shoppersCtrl.addItem);
+
 
 
 

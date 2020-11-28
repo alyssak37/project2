@@ -6,30 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <body>
-
-    <h2> Search Item</h2>
-    <form id="new" action="/shoppers" method="POST">
-    <label>Item: 
-        <input type="text" name="item">
-    </label>
-    <label>Item Color:
-        <select name="Color">
-            <option value="Blue">Blue</option>
-            <option value="Red">Red</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Green">Green</option>
-            <option value="Purple">Purple</option>
-            <option value="Orange">Orange</option>
-            <option value="Black">Black</option>
-            <option value="White">White</option>
-            <option value="Pink">Pink</option>
-            <option value="Grey">Grey</option>
-        </select>
-    </label>
-    <a href="/shoppers">Find Item</a>
+    <h2>Reviews</h2>
+    <form id="add-review-form" method="POST" action="/shoppers">
+      <label>Review:</label>
+      <textarea name="content"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="submit" value="Add Review">
     </form>
-    <a href="/">Back</a>
+    </tbody>
+    
+    
 </body>
+</html>
+
+
+
+
+
 
 
 

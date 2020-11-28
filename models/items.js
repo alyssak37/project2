@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
+const reviewSchema = new Schema({
+    content: String,
+    rating: {type: Number, min: 1, max: 5, default: 5}
+}, {
+    timestamps: true
+});
+
 const itemSchema = new Schema({
     clothing: {
         type: String,
@@ -12,7 +19,8 @@ const itemSchema = new Schema({
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'Shopper'
-    }
+    },
+    reviews: [reviewSchema]
 }, {
     timestamps: true
 });
