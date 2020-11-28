@@ -8,6 +8,10 @@ const itemSchema = new Schema({
     color: {
         type: String,
         enum: ['Blue', 'Red', 'Yellow', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Grey', 'White']
+    },
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'Shopper'
     }
 }, {
     timestamps: true

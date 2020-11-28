@@ -1,31 +1,16 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Document</title>
+    <form action="/shoppers" method="POST"></form>
+</head>
 <body>
-
-    <h2> Search Item</h2>
-    <form id="show" action="/shoppers" method="POST">
-    <label>Item: 
-        <input type="text" name="item">
-    </label>
-    <label>Item Color:
-        <select name="Color">
-            <option value="Blue">Blue</option>
-            <option value="Red">Red</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Green">Green</option>
-            <option value="Purple">Purple</option>
-            <option value="Orange">Orange</option>
-            <option value="Black">Black</option>
-            <option value="White">White</option>
-            <option value="Pink">Pink</option>
-            <option value="Grey">Grey</option>
-        </select>
-    </label>
-    <a href="/items">Find Item</a>
-    </form>
-    <a href="/">Back</a>
-</body> -->
+    <h1>My Items</h1>
+    <section id="show-page">
+        <div>Item: </div>
+        <div><%= shopper.item %></div>
+    </section>
+</body>
+</html>

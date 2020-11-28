@@ -1,7 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <body>
+
+    <h2> Search Item</h2>
+    <form id="new" action="/shoppers" method="POST">
+    <label>Item: 
+        <input type="text" name="item">
+    </label>
+    <label>Item Color:
+        <select name="Color">
+            <option value="Blue">Blue</option>
+            <option value="Red">Red</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Green">Green</option>
+            <option value="Purple">Purple</option>
+            <option value="Orange">Orange</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Pink">Pink</option>
+            <option value="Grey">Grey</option>
+        </select>
+    </label>
+    <a href="/shoppers">Find Item</a>
+    </form>
+    <a href="/">Back</a>
+</body>
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="/css/style.css">
+<body>
     <h2> Search By Store</h2>
-    <form id="new-form" action="/shoppers/new" method="POST">
+    <form id="new-form" action="/new" method="POST">
     
     <label>Store Name:
         <select name="Store">
@@ -16,4 +51,4 @@
     </label>
     <a href="/">Back</a>
     </form>
-</body>
+</body> -->
