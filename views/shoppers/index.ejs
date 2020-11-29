@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Document</title>
     <form id="index" action="/shoppers" method="POST"></form>
 </head>
@@ -11,15 +12,16 @@
     <th><h1>Items</h1></th>
 </thead>
 <tbody>
-    <% shoppers.forEach(function(shopper) { %>
+    <% items.forEach(function(item) { %>
         <tr>
-            <td><%= shopper.item %></td>
+            <td><%= item.clothing %></td>
+            <td><%= item.color %></td>
+            <td><%= item.review %></td>
             
         </tr>
   <% }); %>
-  <a href="/new">Write A Review</a>
-
-  <a href="/show">Shop Another Item</a>
+  <a href="/items/<%= items._id%>/reviews/new">Write A Review</a>
+  <p><a href="/shoppers/<%= shoppers._id%>/items/new">Shop Another Item</a></p>
     <p><a href="/">Back</a></p>
   
 </body>

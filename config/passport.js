@@ -8,7 +8,7 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
 }, function(accessToken, refreshToken, profile, cb){
 
-    Shopper.findOne({ googleId: profile.id }, function(err, shopper) {
+    Shopper.findOne({ 'googleId': profile.id }, function(err, shopper) {
         if(err) return cb(err);
         if(shopper) {
             return cb(null, shopper)
@@ -20,14 +20,14 @@ passport.use(new GoogleStrategy({
             });
             newShopper.save(function(err) {
                 if(err) return cb(err);
-                return cb(null, shopper);
+                return cb(null, newShopper);
             });
         };
     });
 }));
 
 passport.serializeUser(function(shopper, done) {
-    done(null, shopper);
+    done(null, shopper.id);
 });
 
 passport.deserializeUser(function(id, done) {

@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <body>
     <h2>Reviews</h2>
-    <form id="add-review-form" method="POST" action="/shoppers">
+    <form id="add-review-form" action="/items/<%= items._id %>/reviews"  method="POST">
       <label>Review:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
@@ -21,7 +21,7 @@
       <input type="submit" value="Add Review">
     </form>
     </tbody>
-    
+   <a href="/shoppers">Back</a>
     
 </body>
 </html>

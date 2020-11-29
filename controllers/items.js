@@ -8,18 +8,20 @@ module.exports = {
 }
 
 function newItem(req, res) {
-    Item.find({}, function(err, items) {
-    res.render('/shoppers', {
-        title: 'Find Item',
-        items
+    Shopper.findById(req.params.id, function(err, shopper) {
+        Item.find({}, function(err, items) {
+            res.render('shoppers/show', {
+                title: 'Find Item',
+                items, shopper
+        });
     });
-})
+});
 }
 
 function create(req, res) {
     req.body.createdBy = req.params.id;
     Item.create(req.body, function (err, item) {
-        res.redirect('/new')
+        res.redirect('/shoppers')
     })
 }
 

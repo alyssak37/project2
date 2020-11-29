@@ -1,3 +1,4 @@
+
 const Item = require('../models/items');
 
 module.exports = {
@@ -8,7 +9,7 @@ function create(req, res) {
     Item.findById(req.params.id, function(err, item) {
         item.reviews.push(req.body)
         item.save(function(err){
-            res.redirect('/shoppers')
+            res.redirect(`items/${item._id}/review/new`);
         })
     })
 }

@@ -1,5 +1,5 @@
 const Shopper = require('../models/shopper');
-const Item = require('../models/items');
+const Items = require('../models/items');
 
 module.exports = {
     index,
@@ -12,11 +12,12 @@ module.exports = {
 }
 
 function index(req, res) {
-    Shopper.find({}, function(err, shoppers) {
-        shoppers.forEach(function(shopper) {
-            console.log(shopper.items)
-        })
-        res.render('shoppers/index', { shopper: 'Items', shoppers});
+    console.log(req.user)
+    Shopper.findById(req.user._id, function(err, shoppers) {
+        Items.find({}, function(err, items) {
+            
+        res.render('shoppers/index', { items, shoppers});
+    })
     });
 };
 

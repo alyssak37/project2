@@ -2,7 +2,7 @@ const express =require('express');
 const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 require('dotenv').config();
 
@@ -13,6 +13,8 @@ require('./config/passport');
 
 const indexRoutes = require('./routes/index');
 const shoppersRoutes = require('./routes/shoppers');
+const itemsRoutes = require('./routes/items');
+const reviewsRoutes = require('./routes/reviews');
 
 app.set('view engine', 'ejs');
 
@@ -32,6 +34,8 @@ app.use(passport.session());
 
 app.use('/', indexRoutes);
 app.use('/', shoppersRoutes);
+app.use('/', itemsRoutes);
+app.use('/', reviewsRoutes);
 
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);

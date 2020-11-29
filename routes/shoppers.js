@@ -3,9 +3,9 @@ const shoppersCtrl = require('../controllers/shoppers');
 
 
 router.get('/shoppers', shoppersCtrl.index);
-router.get('/new', shoppersCtrl.new);
-router.post('/', shoppersCtrl.create);
-router.get('/:id', shoppersCtrl.show);
+router.get('/shoppers/new', shoppersCtrl.new);
+router.post('/shoppers', shoppersCtrl.create);
+router.get('/shoppers/:id', shoppersCtrl.show);
 
 
 

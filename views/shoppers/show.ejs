@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Document</title>
 </head>
 <body>
     <h2> Search Item</h2>
-    <form id="show" action="/show" method="POST">
+    <form id="show" action='/shoppers/<%= shopper._id %>/items' method="POST">
     <label>Item: 
-        <input type="text" name="item">
+        <input type="text" name="clothing">
     </label>
     <label>Item Color:
-        <select name="Color">
+        <select name="color">
             <option value="Blue">Blue</option>
             <option value="Red">Red</option>
             <option value="Yellow">Yellow</option>
@@ -25,12 +26,10 @@
             <option value="Grey">Grey</option>
         </select>
     </label>
-    <a href="/shoppers">Find Item</a>
+    <input type="submit" value="Find Item">
     </form>
-    <a href="/">Back</a>
+    <a href="/shoppers">Back</a>
 </body>
 
 
-
-</body>
 </html>
