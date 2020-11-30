@@ -18,6 +18,7 @@ function newReview(req, res) {
 
 function create(req, res) {
     Item.findById(req.params.id, function(err, item) {
+        req.body.createdBy = item.createdBy;
         item.reviews.push(req.body)
         item.save(function(err){
             res.redirect('/shoppers')

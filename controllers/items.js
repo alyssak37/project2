@@ -26,8 +26,11 @@ function create(req, res) {
     })
 }
 
-function deleteItem(req, res) {
-    Item.findByIdAndDelete(req.params.id);
-    res.redirect('/shoppers');
-}
+
+    function deleteItem(req, res) {
+        Item.findByIdAndDelete(req.params.id, function(err, item) {
+            res.redirect('/shoppers');
+        });
+    }
+
 

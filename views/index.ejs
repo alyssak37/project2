@@ -12,11 +12,10 @@
 <body>
     <main>
         <% if(user) { %>
-            <li><a href="/">Home</a></li>
-            <li><a href="/shoppers">Items</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <p><a href="/shoppers">Items</a></p>
+            <p><a href="/logout">Logout</a></p>
         <% } else { %>
-            <li><a href="/auth/google">Login With Google</a></li>
+            <p><a href="/auth/google">Login With Google</a></p>
         <% } %>
          
 
