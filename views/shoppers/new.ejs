@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
 <body>
     <h2>Reviews</h2>
-    <form id="add-review-form" action="/items/<%= items._id %>/reviews"  method="POST">
+    <form id="add-review-form" action='/items/<%= item._id %>/reviews' method="POST">
       <label>Review:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
@@ -20,15 +21,11 @@
       </select>
       <input type="submit" value="Add Review">
     </form>
-    </tbody>
-   <a href="/shoppers">Back</a>
     
+   <a href="/shoppers">Back</a>
+    <a href="/reviews/<%= review._id %>/new">Edit This Review</a>
 </body>
 </html>
-
-
-
-
 
 
 

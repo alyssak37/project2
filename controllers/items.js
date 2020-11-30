@@ -3,7 +3,8 @@ const Shopper = require('../models/shopper')
 
 module.exports = {
     new: newItem,
-    create
+    create,
+    delete: deleteItem
     
 }
 
@@ -23,5 +24,10 @@ function create(req, res) {
     Item.create(req.body, function (err, item) {
         res.redirect('/shoppers')
     })
+}
+
+function deleteItem(req, res) {
+    Item.findByIdAndDelete(req.params.id);
+    res.redirect('/shoppers');
 }
 

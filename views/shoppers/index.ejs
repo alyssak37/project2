@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Document</title>
-    <form id="index" action="/shoppers" method="POST"></form>
+    <form id="index" action="/shoppers" method="POST">
 </head>
 <body>
 <thead>
     <th><h1>Items</h1></th>
 </thead>
+<table>
 <tbody>
-    <% items.forEach(function(item) { %>
-        <tr>
-            <td><%= item.clothing %></td>
+    <% items.forEach(function(item) { %> 
+           <tr>
             <td><%= item.color %></td>
-            <td><%= item.review %></td>
+            <td><%= item.clothing %></td>
+            </tr>
+        <% }); %>
+        <% items.forEach(function(item) { %>
             
-        </tr>
-  <% }); %>
+            <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <% }); %>
+</tbody>
+</table>
   <a href="/items/<%= items._id%>/reviews/new">Write A Review</a>
   <p><a href="/shoppers/<%= shoppers._id%>/items/new">Shop Another Item</a></p>
     <p><a href="/">Back</a></p>
-  
+
 </body>
 </html>
 

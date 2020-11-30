@@ -9,9 +9,7 @@
 <body>
     <h2> Search Item</h2>
     <form id="show" action='/shoppers/<%= shopper._id %>/items' method="POST">
-    <label>Item: 
-        <input type="text" name="clothing">
-    </label>
+    
     <label>Item Color:
         <select name="color">
             <option value="Blue">Blue</option>
@@ -26,10 +24,26 @@
             <option value="Grey">Grey</option>
         </select>
     </label>
+    <label>Item: 
+        <input type="text" name="clothing">
+    </label>
     <input type="submit" value="Find Item">
     </form>
     <a href="/shoppers">Back</a>
+
+    <h2>Reviews</h2>
+    <form id="add-review-form" method="POST" action="/items/<%= items._id %>/reviews">
+      <label>Review:</label>
+      <textarea name="content"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="submit" value="Add Review">
+    </form>
 </body>
-
-
 </html>

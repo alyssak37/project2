@@ -11,10 +11,10 @@ const app = express();
 require('./config/database');
 require('./config/passport');
 
-const indexRoutes = require('./routes/index');
-const shoppersRoutes = require('./routes/shoppers');
-const itemsRoutes = require('./routes/items');
-const reviewsRoutes = require('./routes/reviews');
+const indexRouter = require('./routes/index');
+const shoppersRouter = require('./routes/shoppers');
+const itemsRouter = require('./routes/items');
+const reviewsRouter = require('./routes/reviews');
 
 app.set('view engine', 'ejs');
 
@@ -32,10 +32,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRoutes);
-app.use('/', shoppersRoutes);
-app.use('/', itemsRoutes);
-app.use('/', reviewsRoutes);
+app.use(function(req, res, next) {
+    res.locals.user = req.user
+    next();
+});
+
+app.use('/', indexRouter);
+app.use('/', shoppersRouter);
+app.use('/', itemsRouter);
+app.use('/', reviewsRouter);
 
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
