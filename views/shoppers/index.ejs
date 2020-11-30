@@ -12,22 +12,22 @@
     <th><h1>Items</h1></th>
 </thead>
 <table>
-<tbody>
-    <% items.forEach(function(item) { %> 
-           <tr>
-            <td><%= item.color %></td>
-            <td><%= item.clothing %></td>
+    <tbody>
+        <% items.forEach(function(item, idx) { %> 
+            <tr>
+                <td><%= item.color %></td>
+                <td><%= item.clothing %></td>
+                <td><a href="/items/<%= item._id %>/reviews/new">Write A Review</a></td>
+                <td>
+                    <form action="/items/<%= idx %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                </td>
             </tr>
         <% }); %>
-        <% items.forEach(function(item) { %>
-            
-            <form action="/items/<%= item._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-            </form>
-            <% }); %>
-</tbody>
+    </tbody>
 </table>
-  <a href="/items/<%= items._id%>/reviews/new">Write A Review</a>
+  
   <p><a href="/shoppers/<%= shoppers._id%>/items/new">Shop Another Item</a></p>
     <p><a href="/">Back</a></p>
 

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Reviews</h2>
-    <form id="add-review-form" action='/items/<%= item._id %>/reviews' method="POST">
+    <form id="add-review-form" action="/items/<%= itemId %>/reviews" method="POST">
       <label>Review:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
@@ -23,7 +23,7 @@
     </form>
     
    <a href="/shoppers">Back</a>
-    <a href="/reviews/<%= review._id %>/new">Edit This Review</a>
+    
 </body>
 </html>
 

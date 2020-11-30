@@ -10,23 +10,23 @@ module.exports = {
 }
 
 function newReview(req, res) {
-    res.render('reviews/new', {
+    res.render('shoppers/new', {
         itemId: req.params.id
     });
 };
 
 
 function create(req, res) {
-    Item.findById(req.body.id, function(err, item) {
+    Item.findById(req.params.id, function(err, item) {
         item.reviews.push(req.body)
         item.save(function(err){
-            res.redirect(`/items/${items._id}/reviews`)
+            res.redirect('/shoppers')
         })
     })
 }
 
 function edit(req, res) {
-    res.render('reviews/edit', {
+    res.render('shoppers/edit', {
         reviewId: req.params.id,
         review: Review.get(req.params.id)
     })
@@ -39,6 +39,6 @@ function update(req, res) {
     };
 
     function deleteReview(req, res) {
-        Review.delete(req.params.id);
+        Review.findByIdAndDelete(req.params.id);
         res.redirect('/shoppers');
     }
