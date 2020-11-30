@@ -32,7 +32,10 @@
             <td>
                 <form action="/shoppers/items/<%= item._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
-                </form>
+                </form></td>
+               <td><a href="/reviews/<%= reviewId %>/edit">Edit Review
+                    "<%= review.text%>"
+                </a>
             </td>
         </tr>
     <% }); %>
