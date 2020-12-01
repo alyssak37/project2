@@ -17,5 +17,7 @@
 
 # Getting Started
 - https://trello.com/b/mcB5eIDm/project-2
+
+
 # Next Steps
 - Adding more functionality and details. A search by store option, images for my items. Overall more styling.
