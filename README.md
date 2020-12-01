@@ -11,8 +11,9 @@
 - MongoDB
 
 # Screenshots
--Screen Shot 2020-12-01 at 3.51.05 PM
--Screen Shot 2020-12-01 at 3.51.46 PM
+![screenshot](./images/screenshot1.png)
+![screenshot](./images/screenshot2.png)
+
 
 # Getting Started
 - https://trello.com/b/mcB5eIDm/project-2
