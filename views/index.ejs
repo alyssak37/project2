@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
    <section id="home">
-<head>
-
+<header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>shopping</title>
     <h1>Welcome To Shoppers Outlet</h1>
-</head>
+    <% if(user) { %>
+        <p><a href="/shoppers">Items</a></p>
+        <p><a href="/logout">Logout</a></p>
+    <% } else { %>
+        <p><a href="/auth/google">Login With Google</a></p>
+    <% } %>
+    
+</header>
 <body>
     <main>
-        <% if(user) { %>
-            <p><a href="/shoppers">Items</a></p>
-            <p><a href="/logout">Logout</a></p>
-        <% } else { %>
-            <p><a href="/auth/google">Login With Google</a></p>
-        <% } %>
-         
-
+        <div class="landscape">
+         <img src="https://assets.vogue.com/photos/5926e5b676e1e0744b14fb29/master/w_1280%2Cc_limit/03-lolo-love-vintage.jpg">
+        </div>
 </section>
 <footer id="footer">
     <p> Copyright &copy; 2020 Shoppers Outlet All Rights Reserved</p>

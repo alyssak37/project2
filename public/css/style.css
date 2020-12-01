@@ -12,21 +12,36 @@ body {
     align-items: center;
     
 }
+img {
+height: 100%;
+width: 100%
+}
+.landscape {
+    height:550px;
+    width: auto
+}
 #home [href="/auth/google"] {
-    display: flex;
+    display: grid;
+    font-size: 20px;
+    justify-content: center;
+}
+
+
+#home [href="/auth/google"],[href="/shoppers"],[href="/logout"]{
+    display: grid;
     justify-content: center;
     font-size: 20px;
 }
 
-
-#home [href="/auth/google"][href="/"],[href="/shoppers"],[href="/logout"]{
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-}
-
-#index {
-   margin: 5px;
+#show input[type="submit"],
+#add-review-form input[type="submit"],
+#edit-page input[type="submit"]
+{
+    width: 8rem;
+    margin-left: auto;
+    background-color: rgb(247, 164, 178);
+    border-radius: 5px;
+    border-color: black;
 }
 
 main {
@@ -43,16 +58,38 @@ main {
      align-items: center;
      justify-content: center;
      background-color: rgb(247, 164, 178);
-     font-size: 30px;
+     font-size: 35px;
  }
 
- 
- #shoppers {
-     flex-direction: row;
-    
+ table {
+     font-size: 18px;
+     padding: 10px;
+     margin-left: auto;
+     margin-right: auto;
+     border-spacing: 22px;
+     border-collapse: separate;
  }
+ th {
+     font-size: 25px;
+ }
+ 
+#show,
+#add-review-form,
+#edit-page {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+#show, input [type="text"]
+#add-review-form, input [type="text"]
+#edit-page input [type="text"] {
+    border-radius: 10px;
+}
+
  #footer {
-     height: 55px;
+     height: 60px;
      width: 100%;
      position: absolute;
      bottom: 0;
