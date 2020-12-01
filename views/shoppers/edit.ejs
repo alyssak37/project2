@@ -7,9 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Edit: "<%= review.text%>"</h3>
+    <h3>Edit: "<%= review.content%>"</h3>
     <form action="/reviews/<%= reviewId %>?_method=PUT" method="POST">
-        <input type="text" name="text" value="<%= review.text%>">
+        <input type="text" name="content" value="<%= review.content%>">
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         <input type="submit" value="Edit Review">
     </form>
 </body>

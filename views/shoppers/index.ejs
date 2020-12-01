@@ -26,6 +26,9 @@
             <td><% item.reviews.forEach(function(review) { %> 
                     <%= review.content %> 
                     <%= review.rating %>
+                    <a href="/reviews/<%= review._id %>/edit">Edit Review
+                    </a>
+                    
             <% }); %>
             </td>
             <td><a href="/items/<%= item._id %>/reviews/new">Write A Review</a></td>
@@ -33,12 +36,10 @@
                 <form action="/shoppers/items/<%= item._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
                 </form></td>
-               <td><a href="/reviews/<%= reviewId %>/edit">Edit Review
-                    "<%= review.text%>"
-                </a>
+               <td>
             </td>
         </tr>
-    <% }); %>
+      <% }); %>
     </tbody>
 </table>
   

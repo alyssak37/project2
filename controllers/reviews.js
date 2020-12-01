@@ -27,17 +27,25 @@ function create(req, res) {
 }
 
 function edit(req, res) {
-    res.render('shoppers/edit', {
-        reviewId: req.params.id,
-        review: Review.get(req.params.id)
-    })
+    Item.findOne({"reviews._id": req.params.id}, function(err, item){
+        console.log(item.reviews)
+        const review = item.reviews.id(req.params.id);
+        res.render('shoppers/edit', {
+            reviewId: req.params.id,
+            review
+    })   
+ })
 }
 
 function update(req, res) {
-     req.body.done = false;
-    Review.findByIdAndUpdate(req.body, req.params.id);
-    res.redirect('/shoppers');
-    };
+    Item.findOne({"reviews._id": req.params.id}, function(err, item){
+        const review = item.reviews.id(req.params.id);
+        review.overwrite(req.body)
+        item.save(function(err){
+            res.redirect('/shoppers');
+        })
+    })
+};
 
     function deleteReview(req, res) {
         Review.findByIdAndDelete(req.params.id);
