@@ -28,7 +28,6 @@ function create(req, res) {
 
 function edit(req, res) {
     Item.findOne({"reviews._id": req.params.id}, function(err, item){
-        console.log(item.reviews)
         const review = item.reviews.id(req.params.id);
         res.render('shoppers/edit', {
             reviewId: req.params.id,

@@ -12,7 +12,6 @@ module.exports = {
 }
 
 function index(req, res) {
-    console.log(req.user)
     Shopper.findById(req.user._id, function(err, shoppers) {
         Items.find({}, function(err, items) {
             
